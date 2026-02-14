@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-cinematic-navy: #0a0a14;
+  --color-cinematic-violet: #151525;
+  --color-cinematic-rose: #251515;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-black text-white/90 selection:bg-violet-500/30;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .perspective-1500 {
+    perspective: 1500px;
+  }
+}
+
+.cinematic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--color-cinematic-violet) 0%,
+    var(--color-cinematic-navy) 100%
+  );
+}
+
+.cinematic-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    linear-gradient(to bottom, transparent, rgba(10, 10, 20, 0.4)),
+    radial-gradient(circle at 10% 20%, rgba(37, 21, 21, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(21, 21, 37, 0.15) 0%, transparent 40%);
+  pointer-events: none;
+}

@@ -1,0 +1,14 @@
+---
+import Letter from '../components/Letter';
+import ScrollOverlay from '../components/ScrollOverlay';
+import FirefliesCanvas from '../components/FirefliesCanvas';
+import ClosingStatement from '../components/ClosingStatement';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<ScrollOverlay client:load />
+	<FirefliesCanvas client:load />
+	<Letter client:load />
+	<ClosingStatement client:visible />
+</Layout>
